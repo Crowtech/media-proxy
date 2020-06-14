@@ -17,13 +17,13 @@ if [ -f "$file" ]; then
 
   echo "git.commit.id = " "$(prop 'git.commit.id')"
   echo "git.build.version = " "$(prop 'git.build.version')"
-  docker push gennyproject/${project}:"${version}"
+  docker push crowtech/${project}:"${version}"
 
-  docker tag gennyproject/${project}:"${version}" gennyproject/${project}:latest
-  docker push gennyproject/${project}:latest
+  docker tag crowtech/${project}:"${version}" crowtech/${project}:latest
+  docker push crowtech/${project}:latest
 
-  docker tag gennyproject/${project}:"${version}" gennyproject/${project}:"$(prop 'git.build.version')"
-  docker push gennyproject/${project}:"$(prop 'git.build.version')"
+  docker tag crowtech/${project}:"${version}" crowtech/${project}:"$(prop 'git.build.version')"
+  docker push crowtech/${project}:"$(prop 'git.build.version')"
 else
   echo "ERROR: git properties $file not found."
 fi

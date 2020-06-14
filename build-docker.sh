@@ -17,7 +17,7 @@ if [ -f "$file" ]; then
   echo "$file found."
   echo "git.commit.id = " "$(prop 'git.commit.id')"
   echo "git.build.version = " "$(prop 'git.build.version')"
-  docker build -t gennyproject/${project}:"${version}" .
+  docker build -t crowtech/${project}:"${version}" .
 
 else
   echo "ERROR: git properties $file not found."
